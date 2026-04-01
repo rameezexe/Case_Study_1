@@ -1,0 +1,17 @@
+Case study: Domain
+
+1. PBL - Unix - 3 user stories
+2. PBL - SQL - 5 user stories
+3. PBL - UI - 3 user stories
+4. PBL - Programming (foundation) - 6 user stories
+5. PBL - Adv Programming - 5 user stories
+6. PBL - Web - 5 user stories
+
+7.Sprint 1 Backlog (combined with above four foundation tech) -> 10 user stories
+
+8.Sprint 2 Backlog (JDBC driven CRUD case study) -> 8 user stories
+
+9.Sprint 3 Backlog (Web application) -> 12 user stories
+
+10.Sprint 4 Backlog (Full stack case study) -> 15 user stories
+

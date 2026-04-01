@@ -1,0 +1,14 @@
+To be submitted by all groups starting Aug'24. 
+
+Consider below folder names and the deliverables to be uploaded.
+
+1. 1_Codebase - final code files including all components (.zip)
+2. 2_Userdoc - user manual explaining the functionalities (.pdf)
+3. 3_Defectlog - defect log referring the closed and open functional defects (.xlsx)
+4. 4_Qlailtylog - one file referring both security defects closed/open and code quality defects open/close (.xls)
+5. 5_NFRs - document highlighting details of NFRs implemented (.pdf)
+6. 6_Codedoc - document referring the overall code documentation (Javadoc or any format as .zip) 
+7. 7_team - emp id, name, LG, Location, joining date, release date, stream (.xlsx)
+8. 8_Sprintdocs - final updated sprint backlog and burndown chart (2 .xlsx)
+9. 9_Productbacklog - case study product backlog implemented (.xlsx)
+10. 10_PPT - final presentation PPT (.pptx)

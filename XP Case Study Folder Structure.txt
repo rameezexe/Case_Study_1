@@ -1,0 +1,17 @@
+Consider example of "Online Stock Exchange" as the business domain.
+
+Parent Folder: "1_Online Stock Exchange" (where 1 refers sequence which will increment as and when new case study is prepared and placed here)
+
+Files and folder in the parent folder:
+
+File 1: "1_PBL_UI.xlsx"
+File 2: "2_PBL_SQL.xlsx"
+File 3: "3_PBL_Unix.xlsx"
+File 4: "4_PBL_Programming.xlsx"
+File 5: "5_Sprint_1_Backlog.xlsx"
+File 6: "6_Sprint_2_Backlog.xlsx"
+File 7: "7_PBL_Adv Programming.xlsx"
+File 8: "8_PBL_Web.xlsx"
+File 9: "9_Sprint_3_Backlog.xlsx"
+File 10:"10_Sprint_4_Backlog.xlsx"
+Folder" "11_Misc" (Place any additional files/reference docs etc. in this folder - if any)
