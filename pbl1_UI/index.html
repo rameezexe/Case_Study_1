@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consumer Registration — Electricity Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <div id="formPage" class="page">
+    <div class="container">
+      <div class="page-header">
+        <div class="logo-mark">⚡</div>
+        <div>
+          <h1>Consumer Registration</h1>
+          <p>Electricity Board — Self Registration Portal</p>
+        </div>
+      </div>
+
+      <div class="card">
+
+        
+        <div class="section-label">Account Details</div>
+        <div class="form-grid">
+          <div class="field full" id="f-cid">
+            <label for="consumerId">Consumer ID <span class="req">*</span></label>
+            <input type="text" id="consumerId" placeholder="Enter 13-digit Consumer ID" maxlength="13" />
+            <div class="err">Enter a valid 13-digit Consumer ID</div>
+          </div>
+          <div class="field full" id="f-bill">
+            <label for="billNo">Bill Number <span class="req">*</span></label>
+            <input type="text" id="billNo" placeholder="Last 5 digits of your bill number" maxlength="5" />
+            <div class="err">Enter the last 5 digits of your bill number</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section: Personal Information -->
+        <div class="section-label">Personal Information</div>
+        <div class="form-grid">
+          <div class="field" id="f-title">
+            <label for="title">Title <span class="req">*</span></label>
+            <select id="title">
+              <option value="">Select Title</option>
+              <option>Mr.</option>
+              <option>Mrs.</option>
+              <option>Ms.</option>
+              <option>Dr.</option>
+              <option>Prof.</option>
+            </select>
+            <div class="err">Please select a title</div>
+          </div>
+          <div class="field" id="f-name">
+            <label for="custName">Customer Name <span class="req">*</span></label>
+            <input type="text" id="custName" placeholder="Full name (max 50 characters)" maxlength="50" />
+            <div class="err">Customer name is required (max 50 characters)</div>
+          </div>
+          <div class="field full" id="f-email">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="text" id="email" placeholder="example@mail.com" />
+            <div class="err">Enter a valid email address</div>
+          </div>
+          <div class="field full" id="f-mobile">
+            <label>Mobile Number <span class="req">*</span></label>
+            <div class="phone-row">
+              <select id="countryCode">
+                <option value="">Country Code</option>
+                <option value="+91">+91 India</option>
+                <option value="+1">+1 USA</option>
+                <option value="+44">+44 UK</option>
+                <option value="+61">+61 Australia</option>
+                <option value="+971">+971 UAE</option>
+                <option value="+65">+65 Singapore</option>
+                <option value="+81">+81 Japan</option>
+                <option value="+49">+49 Germany</option>
+              </select>
+              <input type="text" id="mobile" placeholder="10-digit mobile number" maxlength="10" />
+            </div>
+            <div class="err">Select a country code and enter a 10-digit mobile number</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        
+        <div class="section-label">Login Credentials</div>
+        <div class="form-grid">
+          <div class="field full" id="f-uid">
+            <label for="userId">User ID <span class="req">*</span></label>
+            <input type="text" id="userId" placeholder="5 to 20 characters" minlength="5" maxlength="20" />
+            <div class="err">User ID must be between 5 and 20 characters</div>
+          </div>
+          <div class="field" id="f-pwd">
+            <label for="pwd">Password <span class="req">*</span></label>
+            <input type="password" id="pwd" placeholder="Max 30 characters" maxlength="30" />
+            <div class="err">Password is required</div>
+          </div>
+          <div class="field" id="f-cpwd">
+            <label for="cpwd">Confirm Password <span class="req">*</span></label>
+            <input type="password" id="cpwd" placeholder="Re-enter your password" maxlength="30" />
+            <div class="err">Passwords do not match</div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-row">
+          <button class="btn-reset" id="resetBtn">Reset</button>
+          <button class="btn-primary" id="registerBtn">Register</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+ 
+  <div id="ackPage" class="page hidden">
+    <div class="container ack-container">
+      <div class="ack-card">
+        <div class="ack-icon">✓</div>
+        <h2 class="ack-title">Consumer Registration Successful.</h2>
+        <p class="ack-subtitle">Your account has been created. Please save your consumer details below.</p>
+        <div class="ack-table-wrap">
+          <table class="ack-table">
+            <tr>
+              <td class="ack-label">Customer ID</td>
+              <td class="ack-value" id="ack-cid"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">Customer Name</td>
+              <td class="ack-value" id="ack-name"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">Email</td>
+              <td class="ack-value" id="ack-email"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="txn-btn-row" style="margin-top:0.5rem;">
+          <button class="btn-new" id="newRegBtn">Register Another Consumer</button>
+          <button class="btn-outline" onclick="location.href='login.html'">Go to Login →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

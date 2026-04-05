@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EB Portal — Home</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="app-body">
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">⚡</span>
+      <span class="nav-title">EB Portal</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html" class="nav-link active">Home</a></li>
+      <li><a href="paybill.html" class="nav-link">Pay Bill</a></li>
+      <li><a href="complaint.html" class="nav-link">Register Complaint</a></li>
+      <li><a href="complaintstatus.html" class="nav-link">Complaint Status</a></li>
+    </ul>
+    <div class="nav-user">
+      <span class="welcome-msg">Welcome, <strong id="navUsername"></strong></span>
+      <button class="btn-logout" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="hero-bar">
+    <div class="hero-text">
+      <h2>Welcome back, <span id="heroName"></span>!</h2>
+      <p>Manage your electricity account — pay bills, register and track complaints.</p>
+    </div>
+    <div class="hero-bolt">⚡</div>
+  </div>
+
+  <div class="app-content">
+    <div class="dash-grid">
+      <div class="dash-card" onclick="location.href='paybill.html'">
+        <div class="dash-icon ic-bill">💡</div>
+        <div class="dash-info">
+          <h3>Pay Bill</h3>
+          <p>View and pay your pending electricity bills.</p>
+        </div>
+        <span class="dash-arrow">→</span>
+      </div>
+      <div class="dash-card" onclick="location.href='complaint.html'">
+        <div class="dash-icon ic-complaint">📋</div>
+        <div class="dash-info">
+          <h3>Register Complaint</h3>
+          <p>Report issues with your connection or billing.</p>
+        </div>
+        <span class="dash-arrow">→</span>
+      </div>
+      <div class="dash-card" onclick="location.href='complaintstatus.html'">
+        <div class="dash-icon ic-status">🔍</div>
+        <div class="dash-info">
+          <h3>Complaint Status</h3>
+          <p>Track progress of your registered complaints.</p>
+        </div>
+        <span class="dash-arrow">→</span>
+      </div>
+    </div>
+
+    <div class="summary-section">
+      <div class="section-label">Account Summary</div>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="s-label">Consumer ID</div>
+          <div class="s-value" id="sumCid">1101132490783</div>
+        </div>
+        <div class="summary-card">
+          <div class="s-label">Customer Name</div>
+          <div class="s-value" id="sumName"></div>
+        </div>
+        <div class="summary-card">
+          <div class="s-label">Pending Bills</div>
+          <div class="s-value s-warn">3</div>
+        </div>
+        <div class="summary-card">
+          <div class="s-label">Total Due</div>
+          <div class="s-value s-danger">₹ 6,250.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

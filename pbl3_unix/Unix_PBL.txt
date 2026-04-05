@@ -1,0 +1,11 @@
+
+US010
+awk -F'|' '$7=="Active" {count++} END {print count}' Complaints.txt
+
+US011
+
+awk -F'|' '$1==1101132490783 {print $1"|"$2"|"$5"|"$6 ; found=1} END {if(found==0) print "Customer not found"}' bill.txt 
+
+US012
+
+awk -F'|' '{avg=($3+$4+$5+$6+$7)/5} {print $1"|"$2"|"avg } ' consumerbill.txt

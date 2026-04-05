@@ -1,0 +1,10 @@
+1101132490783|John Smith|9876543210|123 Main St, New York|2500.00|Credit Card
+1101132490784|Jane Doe|9123456780|456 Elm St, Chicago|1800.50|Cash
+1101132490785|Bob Ray|9988776655|789 Oak Ave, Houston|3200.75|Debit Card
+1101132490786|Alice Brown|9871234560|321 Pine Rd, Phoenix|900.00|UPI
+1101132490787|Charlie Wilson|9765432180|654 Maple Dr, Philadelphia|4500.00|Credit Card
+1101132490788|Diana Prince|9654321870|987 Cedar Ln, San Antonio|1100.25|Cash
+1101132490789|Edward Norton|9543218760|147 Birch Blvd, Dallas|2750.00|Net Banking
+1101132490790|Fiona Green|9432187650|258 Walnut St, San Jose|3300.50|UPI
+1101132490791|George Harris|9321876540|369 Spruce Ave, Austin|650.00|Debit Card
+1101132490792|Helen Carter|9218765430|741 Willow Way, Jacksonville|2100.00|Credit Card

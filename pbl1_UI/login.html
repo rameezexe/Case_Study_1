@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EB Portal — Login</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="auth-body">
+
+  <div class="auth-wrap">
+    <div class="auth-brand">
+      <div class="logo-mark auth-logo">⚡</div>
+      <h1>Electricity Board</h1>
+      <p>Customer Self-Service Portal</p>
+    </div>
+
+    <div class="card auth-card">
+      <h2 class="auth-heading">Sign In</h2>
+      <p class="auth-sub">Enter your credentials to access your account</p>
+
+      <div class="field" id="f-uid">
+        <label for="loginUser">User ID <span class="req">*</span></label>
+        <input type="text" id="loginUser" placeholder="Enter your User ID"/>
+        <div class="err">User ID is required</div>
+      </div>
+
+      <div class="field" id="f-pwd">
+        <label for="loginPwd">Password <span class="req">*</span></label>
+        <input type="password" id="loginPwd" placeholder="Enter your password"/>
+        <div class="err">Password is required</div>
+      </div>
+
+      <div class="login-error hidden" id="loginError">Invalid User ID or Password.</div>
+
+      <button class="btn-primary btn-full" id="loginBtn">Login</button>
+
+      <p class="auth-footer">New consumer? <a href="index.html">Register here</a></p>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

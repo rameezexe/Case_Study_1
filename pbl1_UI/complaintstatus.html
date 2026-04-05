@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Track the status of your registered electricity board complaints."/>
+  <title>EB Portal — Complaint Status</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="app-body">
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">⚡</span>
+      <span class="nav-title">EB Portal</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html" class="nav-link">Home</a></li>
+      <li><a href="paybill.html" class="nav-link">Pay Bill</a></li>
+      <li><a href="complaint.html" class="nav-link">Register Complaint</a></li>
+      <li><a href="complaintstatus.html" class="nav-link active">Complaint Status</a></li>
+    </ul>
+    <div class="nav-user">
+      <span class="welcome-msg">Welcome, <strong id="navUsername"></strong></span>
+      <button class="btn-logout" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <h2>Complaint Status</h2>
+    <p>Track the resolution progress of your registered complaints.</p>
+  </div>
+
+  <div class="app-content">
+
+    <!-- Summary bar -->
+    <div class="cs-summary-bar" id="csSummaryBar" style="display:none;">
+      <div class="cs-stat">
+        <span class="cs-stat-num" id="statTotal">0</span>
+        <span class="cs-stat-label">Total</span>
+      </div>
+      <div class="cs-stat-div"></div>
+      <div class="cs-stat">
+        <span class="cs-stat-num cs-stat-warn" id="statPending">0</span>
+        <span class="cs-stat-label">Pending</span>
+      </div>
+      <div class="cs-stat-div"></div>
+      <div class="cs-stat">
+        <span class="cs-stat-num cs-stat-ok" id="statResolved">0</span>
+        <span class="cs-stat-label">Resolved</span>
+      </div>
+      <div class="cs-stat-div"></div>
+      <div class="cs-stat">
+        <span class="cs-stat-num cs-stat-accent" id="statInprogress">0</span>
+        <span class="cs-stat-label">In Progress</span>
+      </div>
+    </div>
+
+    <!-- Complaints table -->
+    <div class="table-card" id="csTableCard" style="display:none;">
+      <div class="table-top-row">
+        <h3>Your Complaints</h3>
+        <a href="complaint.html" class="btn-primary" style="height:34px;font-size:13px;padding:0 14px;display:flex;align-items:center;text-decoration:none;border-radius:6px;">+ New Complaint</a>
+      </div>
+      <div class="table-scroll">
+        <table class="bill-table">
+          <thead>
+            <tr>
+              <th>Complaint ID</th>
+              <th>Type</th>
+              <th>Category</th>
+              <th>Consumer No</th>
+              <th>Contact Person</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="statusTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div class="placeholder-wrap" id="csEmptyState">
+      <div class="placeholder-card">
+        <div class="placeholder-icon">📭</div>
+        <h3>No Complaints Registered</h3>
+        <p>You haven't registered any complaints yet. Click the button below to get started.</p>
+        <a href="complaint.html" class="btn-primary" style="display:inline-flex;align-items:center;height:40px;padding:0 24px;text-decoration:none;border-radius:6px;margin-top:1.25rem;font-size:14px;">Register a Complaint</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+  <script src="complaintstatus.js"></script>
+</body>
+</html>

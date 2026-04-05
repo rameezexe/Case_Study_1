@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EB Portal — Pay Bill</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="app-body">
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">⚡</span>
+      <span class="nav-title">EB Portal</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html" class="nav-link">Home</a></li>
+      <li><a href="paybill.html" class="nav-link active">Pay Bill</a></li>
+      <li><a href="complaint.html" class="nav-link">Register Complaint</a></li>
+      <li><a href="complaintstatus.html" class="nav-link">Complaint Status</a></li>
+    </ul>
+    <div class="nav-user">
+      <span class="welcome-msg">Welcome, <strong id="navUsername"></strong></span>
+      <button class="btn-logout" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <h2>Pay Bill</h2>
+    <p>Select the bills you wish to pay and proceed to payment.</p>
+  </div>
+
+  <div class="app-content">
+    <div class="table-card">
+      <div class="table-top-row">
+        <h3>Pending Bills</h3>
+        <label class="sel-all-label">
+          <input type="checkbox" id="selectAll"/> Select All
+        </label>
+      </div>
+      <div class="table-scroll">
+        <table class="bill-table">
+          <thead>
+            <tr>
+              <th class="col-chk"></th>
+              <th>Bill No.</th>
+              <th>Bill Month</th>
+              <th>Due Date</th>
+              <th>Units (kWh)</th>
+              <th>Amount (₹)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="billBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pay-bar">
+      <div class="pay-bar-info">
+        <span class="pay-bar-count"><span id="selCount">0</span> bill(s) selected</span>
+        <span class="pay-bar-sep">|</span>
+        <span class="pay-bar-lbl">Total Amount:</span>
+        <span class="pay-bar-amt">₹ <span id="totalAmt">0.00</span></span>
+      </div>
+      <button class="btn-primary" id="proceedBtn" disabled>Proceed to Pay →</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="paybill.js"></script>
+</body>
+</html>

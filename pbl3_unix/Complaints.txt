@@ -1,0 +1,10 @@
+C001|John Smith|Billing|Finance|123 Main St, New York|9876543210|Active
+C002|Jane Doe|Technical|IT|456 Elm St, Chicago|9123456780|Closed
+C003|Bob Ray|Service|Support|789 Oak Ave, Houston|9988776655|Active
+C004|Alice Brown|Billing|Finance|321 Pine Rd, Phoenix|9871234560|Inactive
+C005|Charlie Wilson|Network|IT|654 Maple Dr, Philadelphia|9765432180|Active
+C006|Diana Prince|Hardware|IT|987 Cedar Ln, San Antonio|9654321870|Closed
+C007|Edward Norton|Service|Support|147 Birch Blvd, Dallas|9543218760|Active
+C008|Fiona Green|Billing|Finance|258 Walnut St, San Jose|9432187650|Active
+C009|George Harris|Technical|IT|369 Spruce Ave, Austin|9321876540|Closed
+C010|Helen Carter|Service|Support|741 Willow Way, Jacksonville|9218765430|Active

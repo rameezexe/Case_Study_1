@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Register a complaint or service request with the Electricity Board portal."/>
+  <title>EB Portal — Register Complaint</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="app-body">
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">⚡</span>
+      <span class="nav-title">EB Portal</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html" class="nav-link">Home</a></li>
+      <li><a href="paybill.html" class="nav-link">Pay Bill</a></li>
+      <li><a href="complaint.html" class="nav-link active">Register Complaint</a></li>
+      <li><a href="complaintstatus.html" class="nav-link">Complaint Status</a></li>
+    </ul>
+    <div class="nav-user">
+      <span class="welcome-msg">Welcome, <strong id="navUsername"></strong></span>
+      <button class="btn-logout" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <!-- ===== FORM PAGE ===== -->
+  <div id="complaintFormSection">
+    <div class="page-hero">
+      <h2>Register Complaint / Service</h2>
+      <p>Report issues with your electricity connection, meter, or billing.</p>
+    </div>
+
+    <div class="app-content">
+      <div class="complaint-form-wrap">
+
+        <!-- Section: Complaint Type -->
+        <div class="cf-section-title">Complaint / Service Details</div>
+        <div class="form-grid">
+          <div class="field" id="f-ctype">
+            <label for="complaintType">Complaint / Service Type <span class="req">*</span></label>
+            <select id="complaintType">
+              <option value="">Select Complaint / Service Type</option>
+              <option value="billing">Billing Related</option>
+              <option value="voltage">Voltage Related</option>
+              <option value="disruption">Frequent Disruption</option>
+              <option value="streetlight">Street Light Related</option>
+              <option value="pole">Pole Related</option>
+              <option value="meter">Meter Related</option>
+              <option value="newconn">New Connection</option>
+              <option value="name_change">Name Change</option>
+              <option value="load_change">Load Change</option>
+            </select>
+            <div class="err">Please select a complaint / service type</div>
+          </div>
+          <div class="field" id="f-category">
+            <label for="category">Category <span class="req">*</span></label>
+            <select id="category" disabled>
+              <option value="">Select Type First</option>
+            </select>
+            <div class="err">Please select a category</div>
+          </div>
+          <div class="field full" id="f-probdesc">
+            <label for="probDesc">Problem Description <span class="req">*</span></label>
+            <textarea id="probDesc" class="cf-textarea" placeholder="Describe the issue in detail..." maxlength="500" rows="4"></textarea>
+            <div class="err">Please describe the problem (required)</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section: Contact Details -->
+        <div class="cf-section-title">Contact Details</div>
+        <div class="form-grid">
+          <div class="field" id="f-contact">
+            <label for="contactPerson">Contact Person <span class="req">*</span></label>
+            <input type="text" id="contactPerson" placeholder="Name of contact person" maxlength="60"/>
+            <div class="err">Contact person name is required</div>
+          </div>
+          <div class="field" id="f-mobile">
+            <label for="cMobile">Mobile Number <span class="req">*</span></label>
+            <input type="text" id="cMobile" placeholder="10-digit mobile number" maxlength="10"/>
+            <div class="err">Enter a valid 10-digit mobile number</div>
+          </div>
+          <div class="field full" id="f-consno">
+            <label for="consNo">Consumer No <span class="req">*</span></label>
+            <input type="text" id="consNo" placeholder="13-digit Consumer Number" maxlength="13"/>
+            <div class="err">Enter a valid 13-digit Consumer Number</div>
+          </div>
+          <div class="field full" id="f-landmark">
+            <label for="landmark">Landmark</label>
+            <input type="text" id="landmark" placeholder="Nearest landmark (optional)" maxlength="100"/>
+          </div>
+          <div class="field full" id="f-address">
+            <label for="address">Address <span class="req">*</span></label>
+            <textarea id="address" class="cf-textarea" placeholder="Full address..." maxlength="300" rows="3"></textarea>
+            <div class="err">Address is required</div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-row" style="margin-top:1.75rem;">
+          <button class="btn-reset" id="cancelComplaintBtn">Cancel / Reset</button>
+          <button class="btn-primary" id="submitComplaintBtn">Submit Complaint</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SUCCESS ACK PAGE ===== -->
+  <div id="complaintAckSection" class="hidden">
+    <div class="page page-light">
+      <div class="container ack-container">
+        <div class="ack-card">
+          <div class="ack-icon ack-icon-orange">📋</div>
+          <h2 class="ack-title ack-title-orange">Complaint Registered Successfully!</h2>
+          <p class="ack-subtitle">Your complaint has been logged. Our team will address it shortly.</p>
+          <div class="ack-table-wrap">
+            <table class="ack-table">
+              <tr>
+                <td class="ack-label">Complaint ID</td>
+                <td class="ack-value" id="ackComplaintId"></td>
+              </tr>
+              <tr>
+                <td class="ack-label">Complaint Type</td>
+                <td class="ack-value" id="ackComplaintType"></td>
+              </tr>
+              <tr>
+                <td class="ack-label">Category</td>
+                <td class="ack-value" id="ackCategory"></td>
+              </tr>
+              <tr>
+                <td class="ack-label">Contact Person</td>
+                <td class="ack-value" id="ackContact"></td>
+              </tr>
+              <tr>
+                <td class="ack-label">Consumer No</td>
+                <td class="ack-value" id="ackConsNo"></td>
+              </tr>
+              <tr>
+                <td class="ack-label">Registered On</td>
+                <td class="ack-value" id="ackDate"></td>
+              </tr>
+              <tr>
+                <td class="ack-label">Status</td>
+                <td class="ack-value"><span class="badge badge-pending">Pending</span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="txn-btn-row">
+            <button class="btn-new" onclick="location.href='complaintstatus.html'">View All Complaints</button>
+            <button class="btn-outline" onclick="location.href='home.html'">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="complaint.js"></script>
+</body>
+</html>

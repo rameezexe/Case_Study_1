@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EB Portal — Payment</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="app-body">
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">⚡</span>
+      <span class="nav-title">EB Portal</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html" class="nav-link">Home</a></li>
+      <li><a href="paybill.html" class="nav-link active">Pay Bill</a></li>
+      <li><a href="complaint.html" class="nav-link">Register Complaint</a></li>
+      <li><a href="complaintstatus.html" class="nav-link">Complaint Status</a></li>
+    </ul>
+    <div class="nav-user">
+      <span class="welcome-msg">Welcome, <strong id="navUsername"></strong></span>
+      <button class="btn-logout" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <h2>Payment</h2>
+    <p>Review your bill summary and choose a payment mode.</p>
+  </div>
+
+  <div class="app-content payment-layout" id="paymentSummarySection">
+    <div class="pay-summary-card">
+      <div class="section-label">Bill Summary</div>
+      <div id="billSummaryList" class="bill-summary-list"></div>
+      <div class="divider"></div>
+      <div class="pay-row">
+        <span>Bill Amount</span>
+        <span id="dispBillAmt">₹ 0.00</span>
+      </div>
+      <div class="pay-row">
+        <span>PG Charge (2%)</span>
+        <span id="dispPgCharge">₹ 0.00</span>
+      </div>
+      <div class="pay-row pay-row-total">
+        <span>Total Payable Amount</span>
+        <span id="dispTotal">₹ 0.00</span>
+      </div>
+    </div>
+
+    <div class="pay-form-card">
+      <div class="section-label">Mode of Payment</div>
+      <div class="payment-mode-group">
+        <label class="mode-option">
+          <input type="radio" name="payMode" value="credit" checked/>
+          <span class="mode-label">Credit Card</span>
+        </label>
+        <label class="mode-option">
+          <input type="radio" name="payMode" value="debit"/>
+          <span class="mode-label">Debit Card</span>
+        </label>
+      </div>
+
+      <div class="pay-btn-row">
+        <button class="btn-outline" onclick="location.href='home.html'">Back to Home</button>
+        <button class="btn-primary" id="payNowBtn">Pay Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-content hidden" id="cardSection">
+    <div class="card-form-wrap">
+      <div class="page-header card-form-header">
+        <div class="logo-mark">💳</div>
+        <div>
+          <h1 style="color:#fff;font-size:17px;font-weight:600;">Credit / Debit Card</h1>
+          <p style="color:#a8c4e0;font-size:12px;">Enter your card details to complete payment</p>
+        </div>
+      </div>
+      <div class="card card-form-body">
+        <div class="section-label">Card Details</div>
+        <div class="form-grid">
+          <div class="field full" id="f-cardno">
+            <label for="cardNo">Card No <span class="req">*</span></label>
+            <input type="text" id="cardNo" placeholder="16-digit card number" maxlength="19"/>
+            <div class="err">Enter a valid 16-digit card number</div>
+          </div>
+          <div class="field full" id="f-chname">
+            <label for="cardHolder">Card Holder Name <span class="req">*</span></label>
+            <input type="text" id="cardHolder" placeholder="Name as on card (min 10 characters)" maxlength="60"/>
+            <div class="err">Card holder name must be at least 10 characters</div>
+          </div>
+          <div class="field" id="f-expiry">
+            <label for="expiry">Expiry Date <span class="req">*</span></label>
+            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5"/>
+            <div class="err">Enter valid expiry date (MM/YY)</div>
+          </div>
+          <div class="field" id="f-cvv">
+            <label for="cvv">CVV <span class="req">*</span></label>
+            <input type="password" id="cvv" placeholder="3-digit CVV" maxlength="3"/>
+            <div class="err">Enter a valid 3-digit CVV</div>
+          </div>
+        </div>
+        <div class="pay-amount-display">
+          <span>Payable Amount:</span>
+          <span class="pay-amount-val" id="cardPayAmt">₹ 0.00</span>
+        </div>
+        <div class="btn-row">
+          <button class="btn-reset" id="backToSummaryBtn">← Back</button>
+          <button class="btn-primary" id="makePaymentBtn">Make Payment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-content hidden" id="txnSection">
+    <div class="container ack-container">
+      <div class="ack-card">
+        <div class="ack-icon">✓</div>
+        <h2 class="ack-title">Payment Successful!</h2>
+        <p class="ack-subtitle">Your electricity bill payment has been processed successfully.</p>
+        <div class="ack-table-wrap">
+          <table class="ack-table">
+            <tr>
+              <td class="ack-label">Transaction ID</td>
+              <td class="ack-value" id="txnId"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">Consumer ID</td>
+              <td class="ack-value" id="txnCid"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">Customer Name</td>
+              <td class="ack-value" id="txnName"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">Bill Amount</td>
+              <td class="ack-value" id="txnBillAmt"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">PG Charge</td>
+              <td class="ack-value" id="txnPg"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">Total Paid</td>
+              <td class="ack-value" id="txnTotal"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">Payment Mode</td>
+              <td class="ack-value" id="txnMode"></td>
+            </tr>
+            <tr>
+              <td class="ack-label">Date &amp; Time</td>
+              <td class="ack-value" id="txnDate"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="txn-btn-row">
+          <button class="btn-new" id="downloadBtn">⬇ Download Receipt</button>
+          <button class="btn-outline" onclick="location.href='home.html'">Back to Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="payment.js"></script>
+</body>
+</html>
